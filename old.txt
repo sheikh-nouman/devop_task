@@ -1,0 +1,7 @@
+FROM ubuntu:latest
+
+ADD https://github.com/devhuzaifa98/devops-task-967804/blob/0e10a5069b6a3434a5c0a08ed6c24b385cc7c616/server /usr/local/bin/server
+
+RUN chmod +x /usr/local/bin/server
+
+ENTRYPOINT ["/usr/local/bin/server"]

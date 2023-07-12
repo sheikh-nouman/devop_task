@@ -1,0 +1,7 @@
+FROM node:12-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm i
+COPY server.js app/server.js
+COPY wrapper.sh wrapper.sh
+CMD ./wrapper.sh

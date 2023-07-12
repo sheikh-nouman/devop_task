@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package colorize;
+
+import "google/protobuf/timestamp.proto";
+option go_package = ".;main";
+
+service Colorizer {
+    rpc colorize (ColorizeRequest) returns (stream ColorizeResponse) {}
+}
+
+message ColorizeResponse {
+    string ip = 1;
+    google.protobuf.Timestamp created = 2;
+    bytes image = 3;
+}
+
+message ColorizeRequest {
+    string op = 1;
+    bytes image = 2;
+}
